@@ -1,0 +1,1 @@
+This repository provides the scripts for both "stable", "beta" and "dev" brances to create the latest version from the official deb packages available at [www.microsoft.com/edge](https://www.microsoft.com/edge) and daily updated AppImage packages ready to be used.
