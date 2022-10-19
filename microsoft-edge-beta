@@ -1,0 +1,34 @@
+#!/bin/sh
+
+APP=microsoft-edge
+
+mkdir tmp;
+cd tmp;
+
+# DOWNLOADING THE DEPENDENCIES
+wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage -O appimagetool
+wget https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main/tools/pkg2appimage
+chmod a+x ./appimagetool ./pkg2appimage
+
+# CREATING THE APPIMAGE
+echo 'app: '$APP'
+
+ingredients:
+  package: microsoft-edge-beta
+  dist: stable
+  sources: 
+    - deb https://packages.microsoft.com/repos/edge/ stable main' >> recipe.yml;
+
+./pkg2appimage ./recipe.yml;
+
+
+cd ..;
+cp ./tmp/$APP/$APP.AppDir/usr/share/applications/*.desktop ./tmp/$APP/$APP.AppDir/
+mv ./tmp/$APP/$APP.AppDir/opt/microsoft/msedge-beta/* ./tmp/$APP/$APP.AppDir/
+rm ./tmp/$APP/$APP.AppDir/AppRun
+cp ./tmp/$APP/$APP.AppDir/microsoft-edge-beta ./tmp/$APP/$APP.AppDir/AppRun
+cp ./tmp/$APP/$APP.AppDir/*256*png ./tmp/$APP/$APP.AppDir/$APP-beta.png
+version=$(exec ./tmp/microsoft-edge/microsoft-edge.AppDir/AppRun --version | grep -Eo "[+-]?[0-9]+([.][0-9]+)?+[+-]?[0-9]+([.][0-9]+)?")
+ARCH=x86_64 ./tmp/appimagetool -n ./tmp/$APP/$APP.AppDir
+mv ./Microsoft_Edge_"(beta)"-*AppImage ./Microsoft_Edge_"(beta)"-$version-x86_64.AppImage
+rm -R -f ./tmp
