@@ -17,7 +17,7 @@ ingredients:
   package: microsoft-edge-dev
   dist: stable
   script: 
-    - wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/'$(wget -q https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-dev/ -O - | grep -Po '(?<=href=")[^"]*' | sort --version-sort | tail -1)'' >> recipe.yml;
+    - wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-dev/'$(wget -q https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-dev/ -O - | grep -Po '(?<=href=")[^"]*' | sort --version-sort | tail -1)'' >> recipe.yml;
 
 ./pkg2appimage ./recipe.yml;
 
