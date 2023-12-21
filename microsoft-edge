@@ -1,7 +1,6 @@
 #!/bin/sh
 
 APP=microsoft-edge
-version=$(wget -q https://repology.org/project/microsoft-edge/versions -O - | grep "newest version" | head -1 | grep -o -P '(?<=">).*(?=</a)' | sed 's/^.*>//')
 
 mkdir tmp;
 cd tmp;
@@ -17,10 +16,8 @@ echo 'app: '$APP'
 ingredients:
   package: microsoft-edge-stable
   dist: stable
-  script:
-    - wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_'$version'-1_amd64.deb
-  packages:
-    - microsoft-edge-stable' >> recipe.yml;
+  script: 
+    - wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/'$(wget -q https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/ -O - | grep -Po '(?<=href=")[^"]*' | sort --version-sort | tail -1)'' >> recipe.yml;
 
 ./pkg2appimage ./recipe.yml;
 
