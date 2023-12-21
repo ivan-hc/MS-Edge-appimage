@@ -16,8 +16,8 @@ echo 'app: '$APP'
 ingredients:
   package: microsoft-edge-dev
   dist: stable
-  sources: 
-    - deb https://packages.microsoft.com/repos/edge/ stable main' >> recipe.yml;
+  script: 
+    - wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/'$(wget -q https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-dev/ -O - | grep -Po '(?<=href=")[^"]*' | sort --version-sort | tail -1)'' >> recipe.yml;
 
 ./pkg2appimage ./recipe.yml;
 
