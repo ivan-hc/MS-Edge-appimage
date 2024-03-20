@@ -28,6 +28,6 @@ rm ./tmp/$APP/$APP.AppDir/AppRun
 cp ./tmp/$APP/$APP.AppDir/microsoft-edge ./tmp/$APP/$APP.AppDir/AppRun
 cp ./tmp/$APP/$APP.AppDir/*256*png ./tmp/$APP/$APP.AppDir/$APP.png
 version=$(exec ./tmp/microsoft-edge/microsoft-edge.AppDir/AppRun --version | grep -Eo "[+-]?[0-9]+([.][0-9]+)?+[+-]?[0-9]+([.][0-9]+)?")
-ARCH=x86_64 VERSION=$(./appimagetool -v | grep -o '[[:digit:]]*') ./appimagetool -s ./tmp/$APP/$APP.AppDir
+ARCH=x86_64 VERSION=$(./tmp/appimagetool -v | grep -o '[[:digit:]]*') ./tmp/appimagetool -s ./tmp/$APP/$APP.AppDir
 mv ./Microsoft_Edge-*AppImage ./Microsoft_Edge-$version-x86_64.AppImage
 rm -R -f ./tmp
