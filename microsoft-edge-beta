@@ -6,7 +6,7 @@ mkdir tmp;
 cd tmp;
 
 # DOWNLOADING THE DEPENDENCIES
-wget -q $(wget -q https://api.github.com/repos/probonopd/go-appimage/releases -O - | grep -v zsync | grep -i continuous | grep -i appimagetool | grep -i x86_64 | grep browser_download_url | cut -d '"' -f 4 | head -1) -O appimagetool
+wget -q "$(wget -q https://api.github.com/repos/probonopd/go-appimage/releases -O - | sed 's/"/ /g; s/ /\n/g' | grep -o 'https.*continuous.*tool.*86_64.*mage$')" -O appimagetool
 wget https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main/tools/pkg2appimage
 chmod a+x ./appimagetool ./pkg2appimage
 
@@ -17,7 +17,7 @@ ingredients:
   package: microsoft-edge-beta
   dist: stable
   script: 
-    - wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-beta/'$(wget -q https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-beta/ -O - | grep -Po '(?<=href=")[^"]*' | sort --version-sort | tail -1)'' >> recipe.yml;
+    - wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-beta/'$(curl -Ls https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-beta/ | grep -Po '(?<=href=")[^"]*' | sort --version-sort | tail -1)'' >> recipe.yml;
 
 ./pkg2appimage ./recipe.yml;
 
