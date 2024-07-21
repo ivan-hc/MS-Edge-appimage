@@ -46,7 +46,5 @@ jobs:
             prerelease: false
             draft: false
             files: |
-              Microsoft-Edge-stable-x86_64.AppImage
-              Microsoft-Edge-beta-x86_64.AppImage
-              Microsoft-Edge-dev-x86_64.AppImage
+              Microsoft-Edge-x86_64.AppImage
             repo_token: ${{ secrets.GITHUB_TOKEN }}
