@@ -58,4 +58,4 @@ cd ..
 mv ./"$CHANNEL"/*.AppImage* ./
 
 cd ..
-mv ./tmp/*.AppImage ./
+mv ./tmp/*.AppImage* ./
