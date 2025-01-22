@@ -16,8 +16,7 @@ jobs:
 
     - name: build
       run: |
-        sudo apt update && sudo apt install libfuse2 desktop-file-utils
-        wget https://raw.githubusercontent.com/ivan-hc/MS-Edge-appimage/main/microsoft-edge-builder.sh
+        sudo apt update && sudo apt install desktop-file-utils
         chmod a+x microsoft-edge-builder.sh
         ./microsoft-edge-builder.sh
         mkdir dist
