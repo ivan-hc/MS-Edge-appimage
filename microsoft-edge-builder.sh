@@ -35,7 +35,7 @@ _create_edge_appimage(){
 	tar xf ./control.tar.xz
 	VERSION=$(cat control | grep Version | cut -c 10-)
 	ARCH=x86_64 ./appimagetool --comp zstd --mksquashfs-opt -Xcompression-level --mksquashfs-opt 20 \
-	-u "gh-releases-zsync|$GITHUB_REPOSITORY_OWNER|MS-Edge-appimage|continuous|*x86_64.AppImage.zsync" \
+	-u "gh-releases-zsync|$GITHUB_REPOSITORY_OWNER|MS-Edge-appimage|continuous|*-$CHANNEL-*x86_64.AppImage.zsync" \
 	./"$APP".AppDir Microsoft-Edge-"$CHANNEL"-"$VERSION"-x86_64.AppImage || exit 1
 }
 
