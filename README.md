@@ -1,6 +1,11 @@
 This repository provides the scripts for both "stable", "beta" and "dev" brances to create the latest version from the official deb packages available at [www.microsoft.com/edge](https://www.microsoft.com/edge) and daily updated AppImage packages ready to be used.
 
-------------------------------------------------------------------------
+--------------------------------------------------
+### NOTE: This wrapper is not verified by, affiliated with, or supported by Microsoft.
+
+**The base software is under a proprietary license and unofficially repackaged as an AppImage for demonstration purposes, for the original authors, to promote this packaging format to them. Consider this package as "experimental". I also invite you to request the authors to release an official AppImage, and if they agree, you can show this repository as a proof of concept.**
+
+--------------------------------------------------
 
 ## Install and update them all with ease
 
