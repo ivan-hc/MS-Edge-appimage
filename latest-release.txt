@@ -1,3 +1,3 @@
-https://github.com/ivan-hc/MS-Edge-appimage/releases/download/continuous/Microsoft-Edge-beta-135.0.3179.41-1-x86_64.AppImage
+https://github.com/ivan-hc/MS-Edge-appimage/releases/download/continuous/Microsoft-Edge-beta-135.0.3179.54-1-x86_64.AppImage
 https://github.com/ivan-hc/MS-Edge-appimage/releases/download/continuous/Microsoft-Edge-dev-136.0.3227.1-1-x86_64.AppImage
-https://github.com/ivan-hc/MS-Edge-appimage/releases/download/continuous/Microsoft-Edge-stable-134.0.3124.95-1-x86_64.AppImage
+https://github.com/ivan-hc/MS-Edge-appimage/releases/download/continuous/Microsoft-Edge-stable-135.0.3179.54-1-x86_64.AppImage
