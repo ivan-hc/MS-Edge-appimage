@@ -1,4 +1,4 @@
 https://github.com/ivan-hc/MS-Edge-appimage/releases/download/continuous/Microsoft-Edge-beta-139.0.3405.21-1-x86_64.AppImage
 https://github.com/ivan-hc/MS-Edge-appimage/releases/download/continuous/Microsoft-Edge-dev-140.0.3421.0-1-x86_64.AppImage
 https://github.com/ivan-hc/MS-Edge-appimage/releases/download/continuous/Microsoft-Edge-stable-138.0.3351.83-1-x86_64.AppImage
-Sun Jul 13 01:27:30 UTC 2025
+Mon Jul 14 01:23:53 UTC 2025
