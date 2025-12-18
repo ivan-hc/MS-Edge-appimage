@@ -24,7 +24,7 @@ _create_edge_appimage(){
 	tar xf ./data.tar.xz
 	mkdir "$APP".AppDir
 	mv ./opt/microsoft/msed*/* ./"$APP".AppDir/
-	[ ! -f ./"$APP".AppDir/*.desktop ] && mv ./usr/share/applications/*.desktop ./"$APP".AppDir/
+	[ ! -f ./"$APP".AppDir/*.desktop ] && mv ./usr/share/applications/m*.desktop ./"$APP".AppDir/
 	if [ "$CHANNEL" = "stable" ]; then
 		cp ./"$APP".AppDir/"$APP" ./"$APP".AppDir/AppRun
 		cp ./"$APP".AppDir/*128.png ./"$APP".AppDir/"$APP".png
